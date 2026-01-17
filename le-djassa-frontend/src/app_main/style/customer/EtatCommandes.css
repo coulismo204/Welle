@@ -1,0 +1,105 @@
+/* Nouveaux styles pour la liste des commandes */
+.ec-order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.ec-order-item {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.ec-order-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ec-order-image {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.ec-order-image .product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ec-order-details {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ec-order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.ec-order-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.ec-order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ec-order-id,
+.ec-order-date {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Style responsive */
+@media (max-width: 768px) {
+  .ec-order-item {
+    flex-direction: column;
+  }
+
+  .ec-order-image {
+    width: 100px;
+    height: 200px;
+  }
+
+  .ec-order-details {
+    padding: 12px;
+  }
+}/* Ajout de styles de fond et d'italique */
+.bg-orange {
+  background-color: #ffd580; /* Orange clair */
+  color: #333;
+}
+
+.bg-green {
+  background-color: #b8e994; /* Vert clair */
+  color: #fff;
+}
+
+.ec-italic {
+  font-style: italic;
+  color: #666;
+}
+
+

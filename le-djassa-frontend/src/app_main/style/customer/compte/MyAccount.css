@@ -1,0 +1,121 @@
+.my-account-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.my-account-container h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.p-tabview .p-tabview-nav {
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #ddd;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    color: #555;
+    padding: 1rem 1.5rem;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background-color: #fff;
+    color: #2196F3;
+    border-bottom: 2px solid #2196F3;
+}
+
+.p-card {
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.p-card .p-card-title {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.profile-form .p-field {
+    margin-bottom: 1rem;
+}
+
+.profile-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+}
+
+.profile-form .p-inputtext,
+.profile-form .p-dropdown,
+.profile-form .p-calendar {
+    width: 100%;
+}
+
+.p-field-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.p-field-checkbox label {
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+}
+
+.p-button {
+    margin-right: 0.5rem;
+}
+
+.p-button.p-button-success {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.p-button.p-button-warning {
+    background-color: #FFC107;
+    border-color: #FFC107;
+}
+
+.p-button.p-button-danger {
+    background-color: #F44336;
+    border-color: #F44336;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+.p-chart {
+    margin-top: 20px;
+}
+
+.address-form {
+    margin-bottom: 20px;
+}
+
+.address-form .p-inputtextarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.existing-addresses p {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .my-account-container {
+        padding: 10px;
+    }
+    
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+        padding: 0.5rem 1rem;
+    }
+}

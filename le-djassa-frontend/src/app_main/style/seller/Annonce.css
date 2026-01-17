@@ -1,0 +1,43 @@
+/* Personnalisation du bouton "Choisir des fichiers" */
+.choose-button {
+    background-color: #28a745; /* Couleur de fond */
+    border-color: #28a745; /* Couleur de bordure */
+    color: black; /* Couleur du texte */
+}
+
+/* Effet de survol sur le bouton "Choisir des fichiers" */
+.choose-button:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+/* Personnalisation du bouton "Télécharger" */
+.upload-button {
+    background-color: #007bff; /* Couleur de fond */
+    border-color: #007bff; /* Couleur de bordure */
+    color: white; /* Couleur du texte */
+}
+
+/* Effet de survol sur le bouton "Télécharger" */
+.upload-button:hover {
+    background-color:red;
+    border-color: #0056b3;
+}
+
+/* Personnalisation du bouton "Annuler" */
+.cancel-button {
+    background-color: #dc3545; /* Couleur de fond */
+    border-color: #dc3545; /* Couleur de bordure */
+    color: white; /* Couleur du texte */
+}
+
+/* Effet de survol sur le bouton "Annuler" */
+.cancel-button:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+/* Uniformisation de la police sur tout le formulaire */
+body, input, textarea, button {
+    font-family: 'Arial', sans-serif; /* Police unifiée */
+}

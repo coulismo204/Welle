@@ -1,0 +1,367 @@
+/* Annonces.css */
+.an-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.an-header {
+    margin-bottom: 30px;
+}
+
+.an-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* Barre de recherche */
+.an-search-bar {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.an-search-input {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #e8e8e8;
+    transition: all 0.3s ease;
+}
+
+.an-search-input:hover {
+    border-color: #40a9ff;
+}
+
+.an-search-input:focus {
+    border-color: #1890ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* Légende des statuts */
+.an-status-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 24px 0;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.an-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.an-status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.an-status-dot.available {
+    background-color: #52c41a;
+}
+
+.an-status-dot.sold-out {
+    background-color: #ff4d4f;
+}
+
+/* Table des annonces */
+.an-table-container {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.an-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+
+.an-table th,
+.an-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.an-table th {
+    background-color: #fafafa;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.an-row-available {
+    background-color: #f6ffed;
+    transition: background-color 0.3s ease;
+}
+
+.an-row-available:hover {
+    background-color: #d9f7be;
+}
+
+.an-row-sold-out {
+    background-color: #fff1f0;
+    transition: background-color 0.3s ease;
+}
+
+.an-row-sold-out:hover {
+    background-color: #ffccc7;
+}
+
+/* Statuts */
+.an-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.an-status-available {
+    background-color: #52c41a;
+    color: white;
+}
+
+.an-status-sold-out {
+    background-color: #ff4d4f;
+    color: white;
+}
+
+/* Actions */
+.an-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.an-edit-icon,
+.an-delete-icon {
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.an-edit-icon {
+    color: #1890ff;
+}
+
+.an-delete-icon {
+    color: #ff4d4f;
+}
+
+.an-edit-icon:hover,
+.an-delete-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Pagination */
+.an-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+    padding: 16px 0;
+}
+
+.an-pagination-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1890ff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.an-pagination-btn:hover:not(:disabled) {
+    background-color: #40a9ff;
+}
+
+.an-pagination-btn:disabled {
+    background-color: #d9d9d9;
+    cursor: not-allowed;
+}
+
+.an-pagination-info {
+    font-size: 14px;
+    color: #666;
+}
+
+/* État vide */
+.an-empty-state {
+    text-align: center;
+    padding: 48px 0;
+    background-color: #fafafa;
+    border-radius: 8px;
+}
+
+.an-empty-icon {
+    font-size: 48px;
+    color: #d9d9d9;
+    margin-bottom: 16px;
+}
+
+.an-empty-state h3 {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.an-empty-state p {
+    color: #999;
+}
+
+/* État de chargement */
+.an-loading {
+    text-align: center;
+    padding: 48px 0;
+}
+
+.an-loading-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 16px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #1890ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* État d'erreur */
+.an-error {
+    text-align: center;
+    padding: 24px;
+    background-color: #fff1f0;
+    border-radius: 8px;
+    margin: 24px 0;
+}
+
+.an-error-icon {
+    font-size: 24px;
+    color: #ff4d4f;
+    margin-bottom: 8px;
+}
+
+.an-error p {
+    color: #cf1322;
+    margin: 0;
+}
+
+/* Info-bulle produit */
+.an-product-name {
+    cursor: help;
+    border-bottom: 1px dashed #d9d9d9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .an-container {
+        padding: 16px;
+    }
+
+    .an-title {
+        font-size: 24px;
+    }
+
+    .an-table th,
+    .an-table td {
+        padding: 12px 8px;
+    }
+
+    .an-status {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .an-actions {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .an-table {
+        display: block;
+    }
+
+    .an-table thead {
+        display: none;
+    }
+
+    .an-table tbody,
+    .an-table tr,
+    .an-table td {
+        display: block;
+    }
+
+    .an-table tr {
+        margin-bottom: 16px;
+        border: 1px solid #f0f0f0;
+        border-radius: 8px;
+    }
+
+    .an-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        border: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .an-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        margin-right: 12px;
+    }
+
+    .an-table td:last-child {
+        border-bottom: none;
+    }
+
+    .an-status-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .an-pagination {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.an-table tr {
+    animation: fadeIn 0.3s ease-out;
+}

@@ -1,0 +1,3 @@
+pip install djangorestframework
+pip install djangorestframework-simplejwt
+pip install django-cors-headers

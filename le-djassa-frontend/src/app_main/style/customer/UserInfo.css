@@ -1,0 +1,9 @@
+.user-info {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.user-icon {
+    margin-right: 8px;
+}

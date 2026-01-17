@@ -1,0 +1,13 @@
+.slider-container {
+    width: 100vw; /* Utiliser la largeur totale de la fenêtre */
+    margin: 0; /* Enlever les marges */
+    padding: 0; /* Enlever les bordures */
+    overflow: hidden; /* Empêcher les débordements */
+    position: relative;
+}
+
+.slider-image {
+    width: 100%; /* Largeur totale de l'écran */
+    height: 65vh; /* Ajuster la hauteur selon tes préférences */
+    object-fit: cover; /* Ajuster l'image pour couvrir l'écran */
+}

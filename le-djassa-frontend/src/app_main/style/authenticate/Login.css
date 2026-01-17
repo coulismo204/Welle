@@ -1,0 +1,196 @@
+/* Dialog styles */
+.log-dialog-login {
+    max-width: 400px;
+    width: 90%;
+}
+
+.log-dialog-login .p-dialog-content {
+    padding: 2rem;
+    background-color: white;
+}
+
+/* Header styles */
+.log-dialog-header-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.log-dialog-header-login span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #28a745;
+}
+
+.log-close-button-login {
+    width: 2rem !important;
+    height: 2rem !important;
+    padding: 0 !important;
+    position: absolute !important;
+    right: 1rem !important;
+    top: 7% !important;
+    transform: translateY(-50%) !important;
+}
+
+.log-close-button-login:hover {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+/* Container and Form styles */
+.log-container-login {
+    padding: 1rem 0;
+}
+
+.log-form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.log-form-login .p-float-label {
+    width: 100%;
+}
+
+.log-form-input-login {
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.log-form-input-login:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Button styles */
+.log-button-login {
+    background-color: #28a745;
+    border: 1px solid #28a745;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.log-button-login:enabled:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.log-button-login:enabled:active {
+    background-color: #1e7e34;
+    border-color: #1c7430;
+}
+
+/* Alert styles */
+.log-alert-login {
+    padding: 0.75rem;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.log-alert-success-login {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.log-alert-error-login {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* Links container */
+.log-links-container-login {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.log-forgot-password-link-login,
+.log-register-link-login {
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.log-forgot-password-link-login:hover,
+.log-register-link-login:hover {
+    color: #28a745;
+    text-decoration: underline;
+}
+
+/* Loading spinner */
+.log-spinner-login .p-progress-spinner {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+/* Toast customization */
+.log-toast-login .p-toast-message {
+    border-radius: 4px;
+}
+
+.log-toast-login .p-toast-message-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.log-toast-login .p-toast-message-error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.log-toast-login .p-toast-message-info {
+    background-color: #cce5ff;
+    border: 1px solid #b8daff;
+    color: #004085;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+    .log-dialog-login {
+        width: 95%;
+    }
+    
+    .log-dialog-header-login span {
+        font-size: 1.3rem;
+    }
+    
+    .log-dialog-login .p-dialog-content {
+        padding: 1.5rem;
+    }
+    
+    .log-form-login {
+        gap: 1.25rem;
+    }
+}
+
+/* Input focus states for PrimeReact components */
+.log-form-login .p-inputtext:enabled:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.log-dialog-login .p-dialog-header {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.log-dialog-login.p-dialog {
+    border-radius: 6px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}

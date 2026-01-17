@@ -1,0 +1,342 @@
+/* Variables pour la cohérence des couleurs */
+:root {
+    --signup-primary: #28a745;
+    --signup-primary-hover: #218838;
+    --signup-primary-light: #e9f7ec;
+    --signup-error: #dc3545;
+    --signup-text: #495057;
+    --signup-border: #ced4da;
+  }
+  
+  /* Style du conteneur principal */
+  .signup-dialog {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .signup-dialog .p-dialog-header {
+    background-color: var(--signup-primary-light);
+    color: var(--signup-primary);
+    border-bottom: 2px solid var(--signup-primary);
+  }
+  
+  /* Barre de progression */
+  .signup-dialog .progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 0 10px;
+  }
+  
+  .signup-dialog .progress-step {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .signup-dialog .progress-step::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 50px);
+    height: 2px;
+    background-color: var(--signup-border);
+    right: -54px;
+    top: 5px;
+  }
+  
+  .signup-dialog .progress-step:last-child::after {
+    display: none;
+  }
+  
+  .signup-dialog .progress-step-active {
+    background-color: var(--signup-primary);
+    box-shadow: 0 0 0 3px var(--signup-primary-light);
+  }
+  
+  .signup-dialog .progress-step-inactive {
+    background-color: var(--signup-border);
+  }
+  
+  /* Contenu du formulaire */
+  .signup-dialog .form-content {
+    padding: 20px 10px;
+  }
+  
+  .signup-dialog .form-field {
+    margin-bottom: 25px;
+  }
+  
+  /* Style des inputs */
+  .signup-dialog .p-inputtext {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--signup-border);
+    border-radius: 4px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .signup-dialog .p-inputtext:hover {
+    border-color: var(--signup-primary);
+  }
+  
+  .signup-dialog .p-inputtext:focus {
+    border-color: var(--signup-primary);
+    box-shadow: 0 0 0 2px var(--signup-primary-light);
+  }
+  
+  .signup-dialog .p-float-label label {
+    color: var(--signup-text);
+  }
+  
+  .signup-dialog .p-float-label input:focus ~ label {
+    color: var(--signup-primary);
+  }
+  
+  /* Style des erreurs */
+  .signup-dialog .p-invalid {
+    border-color: var(--signup-error);
+  }
+  
+  .signup-dialog .p-error {
+    color: var(--signup-error);
+    font-size: 0.875rem;
+    margin-top: 4px;
+    display: block;
+  }
+  
+  /* Style des boutons */
+  .signup-dialog .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .signup-dialog .p-button {
+    padding: 12px 24px;
+    transition: all 0.2s;
+  }
+  
+  .signup-dialog .p-button:not(.p-button-outlined) {
+    background-color: var(--signup-primary);
+    border-color: var(--signup-primary);
+  }
+  
+  .signup-dialog .p-button:not(.p-button-outlined):hover {
+    background-color: var(--signup-primary-hover);
+    border-color: var(--signup-primary-hover);
+  }
+  
+  .signup-dialog .p-button.p-button-outlined {
+    color: var(--signup-primary);
+    border-color: var(--signup-primary);
+  }
+  
+  .signup-dialog .p-button.p-button-outlined:hover {
+    background-color: var(--signup-primary-light);
+  }
+  
+  /* Style pour la checkbox */
+  .signup-dialog .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .signup-dialog .p-checkbox .p-checkbox-box.p-highlight {
+    background-color: var(--signup-primary);
+    border-color: var(--signup-primary);
+  }
+  
+  .signup-dialog .checkbox-label {
+    color: var(--signup-text);
+    cursor: pointer;
+  }
+  
+  /* Style du lien de connexion */
+  .signup-dialog .login-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .signup-dialog .login-button {
+    color: var(--signup-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .signup-dialog .login-button:hover {
+    color: var(--signup-primary-hover);
+    text-decoration: underline;
+  }
+  
+  /* Style du spinner de chargement */
+  .signup-dialog .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .signup-dialog .p-progress-spinner {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .signup-dialog .p-progress-spinner-circle {
+    stroke: var(--signup-primary);
+  }
+  
+  /* Styles responsifs */
+  @media screen and (max-width: 768px) {
+    /* Ajustement de la boîte de dialogue pour les tablettes */
+    .signup-dialog.p-dialog {
+      width: 90vw !important;
+      margin: 0 auto;
+    }
+    
+    /* Réduire le padding général */
+    .signup-dialog .form-content {
+      padding: 15px 5px;
+    }
+    
+    /* Ajuster la taille des boutons */
+    .signup-dialog .p-button {
+      padding: 10px 16px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Ajustements pour mobile */
+    .signup-dialog.p-dialog {
+      width: 95vw !important;
+    }
+    
+    /* Réduire la taille de l'en-tête */
+    .signup-dialog .p-dialog-header {
+      padding: 0.8rem;
+    }
+    
+    .signup-dialog .p-dialog-title {
+      font-size: 1.2rem;
+    }
+    
+    /* Ajuster la barre de progression */
+    .signup-dialog .progress-step {
+      width: 10px;
+      height: 10px;
+    }
+    
+    .signup-dialog .progress-step::after {
+      width: calc(100% + 30px);
+      right: -34px;
+    }
+    
+    /* Réduire l'espace entre les champs */
+    .signup-dialog .form-field {
+      margin-bottom: 20px;
+    }
+    
+    /* Ajuster les inputs */
+    .signup-dialog .p-inputtext {
+      padding: 10px;
+      font-size: 1rem;
+    }
+    
+    /* Adapter les boutons pour mobile */
+    .signup-dialog .button-container {
+      flex-direction: column-reverse;
+      gap: 8px;
+    }
+    
+    .signup-dialog .p-button {
+      width: 100%;
+      justify-content: center;
+      padding: 12px;
+    }
+    
+    /* Ajuster la checkbox */
+    .signup-dialog .checkbox-container {
+      margin-top: 5px;
+    }
+    
+    .signup-dialog .checkbox-label {
+      font-size: 0.9rem;
+    }
+    
+    /* Ajuster le texte d'erreur */
+    .signup-dialog .p-error {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Styles pour très petits écrans */
+  @media screen and (max-width: 320px) {
+    .signup-dialog .p-dialog-title {
+      font-size: 1.1rem;
+    }
+    
+    .signup-dialog .p-inputtext {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+    
+    .signup-dialog .p-float-label label {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Support du mode paysage sur mobile */
+  @media screen and (max-height: 600px) and (orientation: landscape) {
+    .signup-dialog .form-content {
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+    
+    .signup-dialog .form-field {
+      margin-bottom: 15px;
+    }
+  }
+  
+  /* Support pour l'accessibilité - Dark mode du système */
+  @media (prefers-color-scheme: dark) {
+    .signup-dialog {
+      --signup-primary-light: rgba(40, 167, 69, 0.2);
+    }
+  }
+
+  /* la partie qui concerne le format carte du choix vendeur ou acheteur */
+
+  .account-type-cards {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.account-card {
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 2px solid #e0e0e0;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.account-card i {
+    font-size: 2rem;
+    color: #28a745;
+}
+
+.account-card.active {
+    border-color: #28a745;
+    background: rgba(40, 167, 69, 0.08);
+}

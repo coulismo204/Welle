@@ -1,0 +1,200 @@
+.DetailCommandesHistorique-container {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.DetailCommandesHistorique-card {
+    border: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+
+.DetailCommandesHistorique-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2) !important;
+}
+
+.DetailCommandesHistorique-card .p-card-body {
+    padding: 1.5rem !important;
+}
+
+.DetailCommandesHistorique-card .p-card-content {
+    padding: 0 !important;
+}
+
+.DetailCommandesHistorique-backButton {
+    transition: all 0.2s ease;
+    border-radius: 8px !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.DetailCommandesHistorique-backButton:hover {
+    background-color: #28a745 !important;
+    color: white !important;
+}
+
+.DetailCommandesHistorique-backButton .p-button-icon {
+    font-size: 1rem;
+}
+
+/* Timeline customization */
+.DetailCommandesHistorique-timeline .p-timeline-event-marker {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+}
+
+.DetailCommandesHistorique-timeline .p-timeline-event-connector {
+    background-color: #e0e0e0 !important;
+}
+
+.DetailCommandesHistorique-timeline .p-timeline-event-content {
+    margin-top: -0.5rem !important;
+}
+
+/* Status tags customization */
+.DetailCommandesHistorique-status-tag {
+    padding: 0.5rem 1rem !important;
+    border-radius: 9999px !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.DetailCommandesHistorique-status-tag i {
+    font-size: 1rem !important;
+}
+
+/* Price displays */
+.DetailCommandesHistorique-price {
+    font-family: 'Roboto', sans-serif;
+    color: #28a745;
+    font-weight: 700;
+}
+
+.DetailCommandesHistorique-total-price {
+    background: rgba(40, 167, 69, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+}
+
+/* Custom scrollbar */
+.DetailCommandesHistorique-container ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.DetailCommandesHistorique-container ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.DetailCommandesHistorique-container ::-webkit-scrollbar-thumb {
+    background: #28a745;
+    border-radius: 4px;
+}
+
+.DetailCommandesHistorique-container ::-webkit-scrollbar-thumb:hover {
+    background: #1e7e34;
+}
+
+/* Animation for loading states */
+@keyframes DetailCommandesHistorique-pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.DetailCommandesHistorique-loading {
+    animation: DetailCommandesHistorique-pulse 1.5s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .DetailCommandesHistorique-container {
+        padding: 1rem;
+    }
+
+    .DetailCommandesHistorique-card .p-card-body {
+        padding: 1rem !important;
+    }
+
+    .DetailCommandesHistorique-timeline .p-timeline-event {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .DetailCommandesHistorique-container {
+        background: white !important;
+    }
+
+    .DetailCommandesHistorique-backButton {
+        display: none !important;
+    }
+
+    .DetailCommandesHistorique-card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}
+
+/* Custom styles for PrimeReact components */
+.p-toast {
+    z-index: 9999;
+}
+
+.p-card {
+    border: none !important;
+    background-color: #ffffff !important;
+}
+
+.p-divider {
+    margin: 1rem 0 !important;
+}
+
+.p-progressspinner {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+/* Status-specific colors */
+.DetailCommandesHistorique-status-en-attente {
+    background-color: #fff3cd !important;
+    color: #856404 !important;
+}
+
+.DetailCommandesHistorique-status-en-traitement {
+    background-color: #cce5ff !important;
+    color: #004085 !important;
+}
+
+.DetailCommandesHistorique-status-livraison-en-cours {
+    background-color: #d4edda !important;
+    color: #155724 !important;
+}
+
+.DetailCommandesHistorique-status-livree {
+    background-color: #28a745 !important;
+    color: white !important;
+}
+
+.DetailCommandesHistorique-status-annulee {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+}

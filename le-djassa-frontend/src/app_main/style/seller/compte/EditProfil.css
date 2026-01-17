@@ -1,0 +1,80 @@
+/* Conteneur principal pour le profil */
+.EdP-edit-profile-container {
+    display: flex;
+    justify-content: space-between; /* Pour disposer les cartes côte à côte */
+    gap: 20px; /* Espace entre les deux cartes */
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Section des champs de saisie */
+.EdP-form-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Section du récapitulatif des informations */
+.EdP-summary-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Carte de profil */
+.EdP-summary-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.EdP-summary-card p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.EdP-summary-card strong {
+    font-weight: bold;
+}
+
+/* Section des boutons de navigation */
+.EdP-navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 0 10px; /* Ajouter de l'espace horizontal autour des boutons */
+}
+
+/* Adaptation responsive pour les petits écrans */
+@media (max-width: 768px) {
+    .EdP-navigation-buttons {
+        margin-top: 20px; /* Ajouter plus d'espace au-dessus des boutons */
+        padding: 0 20px; /* Ajouter plus d'espace horizontal pour les petits écrans */
+        justify-content: center; /* Centrer les boutons */
+    }
+
+    /* Optionnel : si vous voulez espacer davantage les boutons */
+    .EdP-navigation-buttons button {
+        margin: 0 10px; /* Ajouter de l'espace entre les boutons */
+    }
+}
+
+
+/* Rendre la carte récapitulative visible uniquement sur les écrans larges */
+.EdP-summary-section {
+    display: block; /* Affichée par défaut sur PC */
+}
+
+/* Masquer la carte récapitulative sur les petits écrans (moins de 768px) */
+@media (max-width: 768px) {
+    .EdP-summary-section {
+        display: none; /* Cachée sur les petits écrans */
+    }
+}

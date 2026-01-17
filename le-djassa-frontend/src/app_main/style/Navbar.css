@@ -1,0 +1,430 @@
+:root {
+    --navbar-bg-color: white;
+    --navbar-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Base styles for the navbar container */
+#navbar-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--navbar-bg-color);
+/*    background-image: url('../../logo/navbar.jpeg'); /* Chemin vers ton image */
+    background-size: cover; /* Ajuste l'image pour couvrir tout le conteneur */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-position: center; /* Centre l'image de fond */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: var(--navbar-shadow);
+    z-index: 1000;
+}
+
+/* First row styles */
+.navbar-row.navbar-first-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 0;
+}
+
+.navbar-start-selling-btn {
+    opacity: 0.05; /* Bouton presque invisible par défaut */
+    transform: scale(0.95); /* Léger effet de réduction */
+    transition: opacity 0.4s ease-in-out, transform 0.3s ease-in-out;
+    background-color: #28a745; /* Couleur de fond verte */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Effet de mise en avant au survol */
+.navbar-start-selling-btn:hover {
+    opacity: 1; /* Rend le bouton complètement visible */
+    transform: scale(1.05); /* Effet de léger agrandissement */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre douce */
+}
+
+/* Effet de clic pour un retour visuel */
+.navbar-start-selling-btn:active {
+    transform: scale(0.98); /* Légère réduction au clic */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Ombre réduite */
+}
+
+
+
+/* Second row styles */
+.navbar-row.navbar-second-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#navbar-lg {
+    margin-right: 1rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#navbar-lg img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.p-input-icon-center.navbar-input-icon {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  /* Version mobile */
+  @media (max-width: 768px) {
+    .search-container {
+      position: absolute;
+      left: 0;
+      right: 0;
+       
+      background: white;
+      z-index: 1000;
+    }
+  
+    .search-container:not(.expanded) .search-input-wrapper {
+      display: none;
+    }
+  
+    .search-container.expanded {
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  }
+  
+  /* Bouton toggle recherche */
+  .search-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background-color: #f3f4f6;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .search-toggle-btn:hover {
+    background-color: #e5e7eb;
+  }
+  
+  /* Wrapper input de recherche */
+  .search-input-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Styles AutoComplete */
+  #navbar-search {
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  #navbar-search .p-autocomplete-input {
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #e5e7eb;
+  }
+
+  /* Ajustements pour le mode expanded sur mobile */
+  @media (max-width: 768px) {
+    .search-container.expanded {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1rem;
+      z-index: 1000;
+    }
+  
+    .search-input-wrapper {
+      display: flex;
+      align-items: center;
+    }
+  
+    #navbar-search.expanded {
+      width: 100%;
+    }
+  }
+  
+  /* Desktop styles */
+  @media (min-width: 769px) {
+    .search-toggle-btn,
+    .search-close-btn {
+      display: none;
+    }
+  
+    .search-input-wrapper {
+      width: 100%;
+    }
+  }
+
+input[type="text"].navbar-input {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+    border: none;
+}
+
+input[type="text"].navbar-input:focus {
+    outline: none; 
+    border: none;
+    box-shadow: none; 
+    background-color: transparent; 
+}
+
+/* User menu styles */
+#navbar-end {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-menu-wrapper.navbar-user-menu-wrapper .p-button-text {
+    color: #28a745;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.user-menu-wrapper.navbar-user-menu-wrapper .p-button-text:hover {
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.cart-button-container.navbar-cart-button-container {
+    position: relative;
+}
+
+.cart-badge.navbar-cart-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.carts-buttons.navbar-carts-buttons {
+    color: #28a745;
+    border: 2px solid #28a745;
+}
+
+.carts-buttons.navbar-carts-buttons:hover {
+    background: rgba(40, 167, 69, 0.1);
+}
+
+/* Hamburger menu styles */
+.hamburger-menu.navbar-hamburger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 1131px) {
+    #navbar-container {
+        padding: 0.5rem;
+    }
+
+    .navbar-row.navbar-first-row {
+        display: none;
+    }
+
+    .navbar-row.navbar-second-row {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #navbar-lg {
+        display: block;
+        font-size: 1.2rem;
+        flex: 1;
+        text-align: left;
+    }
+
+    .hamburger-menu.navbar-hamburger-menu {
+        display: block;
+        font-size: 1.2rem;
+        margin-right: 0.1rem;
+    }
+
+    #navbar-end {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .user-menu-wrapper.navbar-user-menu-wrapper, .cart-button-container.navbar-cart-button-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .user-menu-wrapper.navbar-user-menu-wrapper .p-button-text {
+        padding: 0.5rem;
+    }
+
+    .user-menu-wrapper.navbar-user-menu-wrapper .p-button-text span {
+        display: none;
+    }
+
+    .cart-button-container.navbar-cart-button-container {
+        margin-left: 0;
+    }
+
+    .carts-buttons.navbar-carts-buttons {
+        padding: 0.5rem;
+    }
+
+    .carts-buttons.navbar-carts-buttons i {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+.cart-button-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-carts-buttons {
+    background-color: transparent;
+    border: none;
+    color: #28a745;
+    position: relative;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column; /* Pour empiler l'icône et le texte */
+    align-items: center; /* Centre l'icône et le texte */
+}
+
+.navbar-cart-text {
+    font-size: 0.75rem; /* Taille du texte pour le rendre petit */
+    color: #28a745; /* Couleur du texte, peut être modifiée */
+    margin-top: 5px; /* Espace entre l'icône et le texte */
+}
+
+.navbar-cart-badge {
+    position: absolute;
+    top: 0;
+    right: -5px;
+}
+
+
+/* Conteneur du bouton de notification */
+.notification-info {
+    position: relative;
+}
+
+/* Bouton de notification */
+.bt-notif-info {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Style de l'icône */
+.bt-notif-info i {
+    color: #4caf50;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+/* Style du badge de notification */
+.navbar-notification-badge {
+    position: absolute;
+    top: 0.1rem; /* Changed from -0.1rem to 0.1rem to move down */
+    right: 30%; /* Changed from 25% to 30% to move left */
+    background-color: #f44336;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    min-width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+    aspect-ratio: 1;
+}
+/* Bouton Livraison */
+.bouton-livraison {
+    background-color: #007bff; /* Couleur de fond bleue */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 15px; /* Marge à droite pour espacer du bouton suivant */
+}
+
+/* Effet au survol du bouton Livraison */
+.bouton-livraison:hover {
+    background-color: #0056b3; /* Changer la couleur au survol */
+    transform: scale(1.05); /* Agrandissement léger */
+}
+
+/* Effet au clic sur le bouton Livraison */
+.bouton-livraison:active {
+    transform: scale(0.98); /* Réduction légère au clic */
+    background-color: #003f7f; /* Couleur plus foncée au clic */
+}
+
+/* Bouton Espace Vendeur */
+.bouton-espace-vendeur {
+    background-color: #28a745; /* Couleur de fond verte */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Effet au survol du bouton Espace Vendeur */
+.bouton-espace-vendeur:hover {
+    background-color: #218838; /* Changer la couleur au survol */
+    transform: scale(1.05); /* Agrandissement léger */
+}
+
+/* Effet au clic sur le bouton Espace Vendeur */
+.bouton-espace-vendeur:active {
+    transform: scale(0.98); /* Réduction légère au clic */
+    background-color: #1e7e34; /* Couleur plus foncée au clic */
+}

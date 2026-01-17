@@ -1,0 +1,219 @@
+/* Styles globaux que vous avez fournis */
+.cart-container {
+    display: flex;
+    flex-direction: column; /* Permet une meilleure organisation en mode téléphone */
+    padding: 10px;
+    max-width: 100%; /* Utilise toute la largeur disponible */
+    margin: 0 auto;
+    background-color: #f9f9f9;
+}
+
+.cart-items {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 20px; /* Ajoute un espace entre les éléments */
+}
+
+.cart-summary {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.cart-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column-reverse; /* Inverse l'ordre des éléments pour un affichage optimal */
+    align-items: flex-start; /* Aligne les éléments au début */
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item-image-remove {
+    display: flex;
+    flex-direction: row; /* Affiche l'image et le bouton sur une ligne */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Prend toute la largeur disponible */
+    margin-bottom: 10px; /* Espace en bas pour séparation des détails */
+}
+
+.cart-item img {
+    width: 80px; /* Réduit encore la taille de l'image pour les petits écrans */
+    height: 80px; /* Réduit la taille de l'image */
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.cart-item-remove button {
+    background-color: transparent;
+    color: orange;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+}
+
+.cart-item-remove button:hover {
+    color: darkorange;
+}
+
+.cart-item-details {
+    width: 100%; /* Prend toute la largeur disponible */
+}
+
+.cart-item-details h2 {
+    font-size: 1rem;
+    margin: 0;
+    color: #555;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+    color: #888;
+}
+
+.cart-item-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item-quantity input {
+    width: 40px; /* Réduit la taille de l'input pour s'adapter à l'écran */
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 10px;
+}
+
+.cart-item-quantity button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem; /* Adapte la taille du bouton */
+}
+
+.cart-item-quantity button:hover {
+    background-color: #218838;
+}
+
+.cart-summary-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.cart-summary-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.cart-summary-button {
+    display: block;
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-summary-button:hover {
+    background-color: #218838;
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 600px) {
+    .cart-container {
+        padding: 10px;
+    }
+
+    .cart-items {
+        padding: 10px;
+    }
+
+    .cart-summary {
+        padding: 10px;
+    }
+
+    .cart-title {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .cart-item {
+        padding: 10px 0;
+    }
+
+    .cart-item img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cart-item-details h2 {
+        font-size: 0.9rem;
+    }
+
+    .cart-item-price {
+        font-size: 1.1rem;
+    }
+
+    .cart-summary-title {
+        font-size: 1.3rem;
+    }
+
+    .cart-summary-detail {
+        font-size: 1rem;
+    }
+
+    .cart-summary-button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+.cart-button {
+    position: relative; /* Permet de positionner le badge par rapport au bouton */
+}
+
+.p-overlay-badges {
+    position: absolute; /* Positionne le badge par rapport à son parent */
+    top: 6px; /* Ajustez cette valeur selon vos besoins */
+    right: 12px; /* Ajustez cette valeur selon vos besoins */
+    background-color: red; /* Couleur de fond du badge */
+    color: white; /* Couleur du texte du badge */
+    border-radius: 35%; /* Rendre le badge circulaire */
+    padding: 0.05em 0.3em; /* Ajustez le rembourrage selon vos préférences */
+    font-size: 17px; /* Ajustez la taille de la police du badge */
+}
+

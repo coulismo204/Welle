@@ -1,0 +1,42 @@
+.timeline-container {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: white;
+}
+
+.timeline-container > div:last-child {
+    border-bottom: none;
+}
+
+.p-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem 0.8rem;
+}
+
+.p-tag .p-tag-icon {
+    margin-right: 0.5rem;
+}
+
+
+.commandedetails-custom-steps .p-steps-item {
+    flex: 1;
+}
+
+.commandedetails-custom-steps .p-steps-number {
+    display: none;
+}
+
+.commandedetails-custom-steps .p-steps-title {
+    white-space: normal;
+    text-align: center;
+}
+
+/* Ajustement de l'espacement entre les steps */
+.commandedetails-custom-steps .p-steps-item:not(:last-child):after {
+    margin-left: 0;
+    margin-right: 0;
+    top: 25%;
+}

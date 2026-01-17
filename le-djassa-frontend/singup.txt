@@ -1,0 +1,115 @@
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
+import './Signup.css';
+import FacebookLogin from 'react-facebook-login';
+import { GoogleLogin } from 'react-google-login';
+import axios from 'axios';
+
+const Signup = () => {
+    const [isOpen, setIsOpen] = useState(true);
+    const [userData, setUserData] = useState({ username: '', email: '', password: '' });
+
+    const handleClose = () => {
+        setIsOpen(false);
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post('http://127.0.0.1:8000/api/utilisateur/inscription/', userData);
+            console.log(res.data);
+            // Mettre à jour l'état local ou effectuer d'autres actions nécessaires
+        } catch (error) {
+            console.error('There was an error!', error);
+        }
+    };
+
+    const responseFacebook = (response) => {
+        try {
+            console.log(response);
+            setUserData({
+                username: response.name,
+                email: response.email,
+                password: ''
+            });
+        } catch (error) {
+            console.error('Error in Facebook response: ', error);
+        }
+    };
+
+    const responseGoogle = (response) => {
+        try {
+            console.log(response);
+            setUserData({
+                username: response.profileObj.name,
+                email: response.profileObj.email,
+                password: ''
+            });
+        } catch (error) {
+            console.error('Error in Google response: ', error);
+        }
+    };
+
+    const responseGoogleFailure = (response) => {
+        console.error('Google login failed: ', response);
+    };
+
+    return (
+        isOpen && (
+            <div className="popup-overlay">
+                <div className="popup-container">
+                    <button onClick={handleClose} style={{ float: 'right', cursor: 'pointer', background: 'none', border: 'none', fontSize: '20px' }}>✖</button>
+                    <h1>Rejoins les vrais wé du djassa maintenant</h1>
+                    {!userData.username ? (
+                        <>
+                            <FacebookLogin
+                                appId="1018135269846315"
+                                autoLoad={false}
+                                fields="name,email"
+                                callback={responseFacebook}
+                                textButton=" Continuer avec Facebook"
+                                icon={<FontAwesomeIcon icon={faFacebook} />}
+                                cssClass="social-button facebook"
+                            />
+                            <GoogleLogin
+                                clientId="771956196469-0rlvq6fnno9fltb74inj86kk9e13i2r0.apps.googleusercontent.com"
+                                onSuccess={responseGoogle}
+                                onFailure={responseGoogleFailure}
+                                cookiePolicy={'single_host_origin'}
+                                render={renderProps => (
+                                    <button onClick={renderProps.onClick} disabled={renderProps.disabled} className="social-button google">
+                                        <FontAwesomeIcon icon={faGoogle} /> Continuer avec Google
+                                    </button>
+                                )}
+                            />
+                            <button className="social-button apple">
+                                <FontAwesomeIcon icon={faApple} /> Continuer avec Apple
+                            </button>
+                            <p>Ou inscrit-toi avec <button className="link-button">E-mail</button></p>
+                            <p>Tu as déjà un compte ? <button className="link-button">Se connecter</button></p>
+                        </>
+                    ) : (
+                        <form onSubmit={handleSubmit}>
+                            <label>
+                                Pseudo:
+                                <input type="text" value={userData.username} onChange={(e) => setUserData({ ...userData, username: e.target.value })} />
+                            </label>
+                            <label>
+                                Mot de passe:
+                                <input type="password" value={userData.password} onChange={(e) => setUserData({ ...userData, password: e.target.value })} />
+                            </label>
+                            <label>
+                                Email:
+                                <input type="email" value={userData.email} onChange={(e) => setUserData({ ...userData, email: e.target.value })} />
+                            </label>
+                            <button type="submit">S'inscrire</button>
+                        </form>
+                    )}
+                </div>
+            </div>
+        )
+    );
+};
+
+export default Signup;

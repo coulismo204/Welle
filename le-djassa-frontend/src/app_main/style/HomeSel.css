@@ -1,0 +1,85 @@
+.sider-navbarvendeur {
+  background-color: #ffffff;
+  border-right: 1px solid #f0f0f0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.sider-navbarvendeur .ant-menu-inline {
+  border-right: none;
+}
+
+.sider-navbarvendeur .ant-menu-item {
+  font-size: 16px;
+  padding-left: 24px;
+}
+
+.sider-navbarvendeur .ant-menu-item-selected {
+  background-color: #e6f7ff; /* Bleu très clair */
+  border-left: 4px solid #40a9ff;
+}
+
+/* Contenu principal */
+.content-navbarvendeur {
+  padding: 24px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.content-wrapper-navbarvendeur {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Boutons et éléments interactifs */
+.button-primary-navbarvendeur {
+  background-color: #40a9ff;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-primary-navbarvendeur:hover {
+  background-color: #1890ff;
+}
+
+.button-secondary-navbarvendeur {
+  background-color: #ffffff;
+  color: #40a9ff;
+  border: 1px solid #40a9ff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-secondary-navbarvendeur:hover {
+  background-color: #e6f7ff;
+}
+
+/* Adaptabilité pour petits écrans */
+@media (max-width: 768px) {
+  .header-navbarvendeur {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .sider-navbarvendeur {
+    display: none;
+  }
+
+  .content-navbarvendeur {
+    padding: 16px;
+  }
+
+  .content-wrapper-navbarvendeur {
+    padding: 16px;
+  }
+}

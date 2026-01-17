@@ -1,0 +1,80 @@
+/* Creeanonce.css */
+
+.ca-cree-anonce {
+    max-width: 800px; /* Largeur maximale pour le formulaire */
+    margin: 20px auto; /* Centrer le formulaire */
+    padding: 20px; /* Espacement interne */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: #ffffff; /* Couleur de fond blanche */
+    box-shadow: 0 4px 10px rgba(33, 218, 16, 0.568); /* Ombre légère */
+    border: solid 1px green;
+}
+
+.ca-form-wrapper {
+    display: flex;
+    flex-direction: column; /* Aligner les éléments en colonne */
+}
+
+.ca-form-group {
+    margin-bottom: 20px; /* Espacement entre les groupes de formulaire */
+    width: 100%; /* S'assurer que le groupe de formulaire utilise toute la largeur */
+}
+
+.ca-form-group label {
+    font-weight: bold; /* Mettre en gras les étiquettes */
+    margin-bottom: 5px; /* Espacement en dessous des étiquettes */
+    display: block; /* Pour garantir que les étiquettes prennent toute la largeur */
+}
+
+.ca-form-group input,
+.ca-form-group textarea,
+.ca-form-group .p-dropdown {
+    width: 100%; /* Les champs d'entrée, textareas et dropdowns prennent toute la largeur */
+    padding: 10px; /* Ajoutez un peu de remplissage pour un aspect plus confortable */
+    border: 1px solid #ccc; /* Bordure légère */
+    border-radius: 4px; /* Coins arrondis */
+}
+
+.ca-form-buttons {
+    display: flex; /* Utiliser flexbox pour les boutons */
+    justify-content: space-between; /* Espacement entre les boutons */
+    align-items: center; /* Centrer verticalement les boutons */
+}
+
+.ca-p-button-primary {
+    background-color: #4CAF50; /* Couleur verte pour le bouton suivant */
+    border: none; /* Supprimer la bordure */
+}
+
+.ca-p-button-success {
+    background-color: #007bff; /* Couleur bleue pour le bouton d'ajout */
+    border: none; /* Supprimer la bordure */
+}
+
+.ca-p-button-secondary {
+    background-color: #f44336; /* Couleur rouge pour le bouton précédent */
+    border: none; /* Supprimer la bordure */
+}
+
+.ca-preview-image {
+    width: 100px; /* Largeur de l'image prévisualisée */
+    height: auto; /* Hauteur automatique pour maintenir les proportions */
+    margin-right: 10px; /* Espacement entre les images */
+    border: 1px solid #ddd; /* Bordure légère autour des images */
+    border-radius: 5px; /* Coins arrondis pour les images */
+}
+
+.ca-image-preview {
+    display: flex; /* Utiliser flexbox pour la prévisualisation des images */
+    margin-top: 10px; /* Espacement au-dessus de la prévisualisation */
+}
+
+.ca-image-preview img {
+    max-width: 100%; /* Empêcher les images de déborder */
+    height: auto; /* Garder les proportions des images */
+}
+
+/* Spinner */
+.p-progress-spinner {
+    margin-left: 10px; /* Espacement à gauche du spinner */
+}

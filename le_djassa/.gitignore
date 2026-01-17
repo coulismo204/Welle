@@ -1,0 +1,30 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+
+# Environnement virtuel
+.env/
+venv/
+env/
+ENV/
+.venv/
+.venv
+
+# Configuration de l'éditeur
+.vscode/
+.idea/
+.spyderproject
+.ropeproject
+
+# Configuration spécifique à Django
+*.log
+*.pot
+*.py[cod]
+__pycache__/
+local_settings.py
+db.sqlite3
+
+# Configuration du système
+.DS_Store
+.env

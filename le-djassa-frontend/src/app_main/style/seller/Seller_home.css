@@ -1,0 +1,30 @@
+/* Global layout styles */
+.layout {
+    min-height: 100vh;
+  }
+  
+  .content {
+    margin: 16px;
+  }
+  
+  .content-wrapper {
+    padding: 24px;
+    background: #fff;
+    min-height: 360px;
+    font-weight: bold;
+  }
+  
+  .footer {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Modal styles */
+  .modal-button {
+    font-weight: bold;
+  }
+  
+  .camera-video {
+    width: 100%;
+  }
+  

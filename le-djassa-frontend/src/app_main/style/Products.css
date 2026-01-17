@@ -1,0 +1,33 @@
+.datatable-responsive-demo .p-datatable {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.p-datatable th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.p-button-success {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.p-button-danger {
+  background-color: #f44336;
+  border-color: #f44336;
+}
+
+.p-button-sm {
+  font-size: 0.9em;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .datatable-responsive-demo .p-datatable {
+    width: 100%;
+    overflow-x: auto;
+  }
+}

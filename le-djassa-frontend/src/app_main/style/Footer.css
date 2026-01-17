@@ -1,0 +1,174 @@
+/* Footer Container */
+.ft-footer {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 2rem 0;
+  font-family: Arial, sans-serif;
+  border-top: 2px solid #28a745;
+}
+
+.ft-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Section Headings */
+.ft-footer h3 {
+  font-size: 1.5rem;
+  color: #28a745;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Social Icons */
+.ft-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 1.5rem 0;
+}
+
+.ft-social-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ft-social-icon {
+  font-size: 1.8rem;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.ft-social-icon:hover {
+  color: #28a745;
+}
+
+.ft-social-label {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Avis Form */
+.ft-avis-form {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.ft-avis-input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  width: 60%;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  outline: none;
+}
+
+.ft-avis-input:focus {
+  border-color: #28a745;
+}
+
+.ft-avis-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ft-avis-button:hover {
+  background-color: #218838;
+}
+
+/* Links Section */
+.ft-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.ft-links h4 {
+  color: #28a745;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.ft-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ft-links li {
+  color: #555;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.ft-links li:hover {
+  color: #28a745;
+  text-decoration: underline;
+}
+
+.ft-clickable {
+  cursor: pointer;
+}
+
+/* Logo Section */
+.ft-logo {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Copyright Section */
+.ft-copyright {
+  text-align: center;
+  color: #777;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Couleurs des icônes */
+.ft-social-icon.mobile {
+  color: #007bff; /* Bleu pour le téléphone */
+}
+
+.ft-social-icon.mobile:hover {
+  color: #0056b3;
+}
+
+.ft-social-icon.whatsapp {
+  color: #25d366; /* Vert pour WhatsApp */
+}
+
+.ft-social-icon.whatsapp:hover {
+  color: #1ebe5b;
+}
+
+.ft-social-icon.facebook {
+  color: #1877f2; /* Bleu pour Facebook */
+}
+
+.ft-social-icon.facebook:hover {
+  color: #145dbf;
+}
+
+.ft-social-icon.email {
+  color: #ea4335; /* Rouge pour l'email */
+}
+
+.ft-social-icon.email:hover {
+  color: #c2322b;
+}
