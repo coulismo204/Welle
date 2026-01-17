@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate  } from 'react-router-dom';
-import { PhoneOutlined, WhatsAppOutlined, EuroOutlined, EnvironmentOutlined, ArrowLeftOutlined, ShoppingCartOutlined, HeartOutlined, ShareAltOutlined } from '@ant-design/icons';
+import { PhoneOutlined, WhatsAppOutlined, EuroOutlined, EnvironmentOutlined, ArrowLeftOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { Button } from 'primereact/button';
 import { Carousel } from 'primereact/carousel';
-import { Rating } from 'primereact/rating';
 import { Tag } from 'primereact/tag';
 import { ProgressBar } from 'primereact/progressbar';
 import { Toast } from 'primereact/toast';
@@ -28,7 +27,7 @@ const ProductDetail = () => {
     const [rating, setRating] = useState(0);  // État pour la note sélectionnée
 
     useEffect(() => {
-        fetch(`${config.API_BASE_URL}/api/produit/produit/${productId}/`)
+        fetch(`${config.API_BASE_URL}/api/produit/${productId}/`)
             .then(response => response.json())
             .then(data => {
                 setProduct(data);
