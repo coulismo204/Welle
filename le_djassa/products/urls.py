@@ -1,4 +1,4 @@
-# urls.py
+# urls.py products
 from django.urls import path
 from .views import ProduitCreate, ProduitList, ProduitListOwner, ProduitDetail, list_etats, CategorieList, \
     SearchProductsView, StatisticsView

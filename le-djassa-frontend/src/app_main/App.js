@@ -25,6 +25,8 @@ import EtatCommandes from '../core/component/customer/EtatCommandes';
 import RoleProtectedRoute from '../core/store/RoleProtectedRoute';
 import PrivacyPolicy from '../views/legal/PrivacyPolicy';
 import TermsAndConditions from '../views/legal/TermsAndConditions';
+import Annonces from '../core/component/seller/Annonces';
+import EditProduct from '../core/component/seller/Edit';
 
 function App() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -94,6 +96,26 @@ function App() {
                                     <Commandes />
                                 </RoleProtectedRoute>
                             } />
+                            
+                            <Route
+                                path="/uservendeur-interface/annonces"
+                                element={
+                                    <RoleProtectedRoute requiredRole="vendeur">
+                                        <Annonces />
+                                    </RoleProtectedRoute>
+                                }
+                            />
+
+                            <Route
+                                path="/uservendeur-interface/annonces/edit/:id"
+                                element={
+                                    <RoleProtectedRoute requiredRole="vendeur">
+                                        <EditProduct />
+                                    </RoleProtectedRoute>
+                                }
+                            />
+
+
                         </Routes>
                         <Footer />
                     </CartProvider>

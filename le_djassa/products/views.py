@@ -38,10 +38,24 @@ class ProduitListOwner(generics.ListAPIView):
         return Produit.objects.filter(vendeur=self.request.user)
 
 
-class ProduitDetail(generics.RetrieveAPIView):
+class ProduitDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Produit.objects.all()
     serializer_class = ProduitDetailSerializer
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def delete(self, request, *args, **kwargs):
+        produit = self.get_object()
+
+        # sécurité : seul le vendeur peut supprimer
+        if produit.vendeur != request.user:
+            return Response(
+                {"detail": "Vous n'avez pas le droit de supprimer ce produit."},
+                status=403
+            )
+
+        produit.delete()
+        return Response(status=204)
+
 
 
 @api_view(['GET'])

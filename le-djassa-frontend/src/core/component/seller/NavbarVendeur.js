@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Bell, Menu as MenuIcon, Package, BarChart3, Tags, Plus, X, Store } from 'lucide-react';
+import { Bell, Menu as MenuIcon, Package, BarChart3, Tags, Plus, X} from 'lucide-react';
 import '../../../app_main/style/seller/navbarvendeur.css';
 import axios from 'axios';
 import config from '../../../core/store/config';
@@ -56,10 +56,10 @@ const NavbarVendeur = ({ selectedMenu, onSelectMenu }) => {
   }, []);
 
   const menuItems = [
-    { key: 'MES ANNONCES', label: 'Mes Annonces', icon: <Tags className="icon" /> },
-    { key: 'NOUVELLE ANNONCE', label: 'Nouvelle Annonce', icon: <Plus className="icon" /> },
-    { key: 'COMMANDES', label: 'Commandes', icon: <Package className="icon" /> },
-    { key: 'TRAFIC DE VENTE', label: 'Trafic de Vente', icon: <BarChart3 className="icon" /> },
+      { key: 'MES ANNONCES', label: 'Mes Annonces', icon: <Tags className="icon" /> },
+      { key: 'NOUVELLE ANNONCE', label: 'Nouvelle Annonce', icon: <Plus className="icon" /> },
+      { key: 'COMMANDES', label: 'Commandes', icon: <Package className="icon" /> },
+      { key: 'TRAFIC DE VENTE', label: 'Trafic de Vente', icon: <BarChart3 className="icon" /> },
   ];
 
   return (

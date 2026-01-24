@@ -22,7 +22,7 @@ const EditProduct = ({ isVisible, onClose, product }) => {
         uploaded_images: [],
         localisation: '',
         categorie: null,
-        est_vendu: false
+        est_vendu: false,
     });
 
     const [etatsOptions, setEtatsOptions] = useState([]);
@@ -61,19 +61,20 @@ const EditProduct = ({ isVisible, onClose, product }) => {
     }, []);
 
     useEffect(() => {
-        if (product) {
-            setFormData({
-                nom: product.produits,
-                description: product.description || '',
-                prix: product.prix,
-                etat: product.etat || null,
-                uploaded_images: [],
-                localisation: product.localisation || '',
-                categorie: product.categorie || null,
-                est_vendu: product.est_vendu
-            });
-        }
+        if (!product) return;
+
+        setFormData({
+            nom: product.nom,                // ✅
+            description: product.description ?? '',
+            prix: product.prix,              // ✅ number
+            etat: product.etat ?? null,
+            uploaded_images: [],
+            localisation: product.localisation ?? '',
+            categorie: product.categorie ?? null,
+            est_vendu: product.est_vendu ?? false,
+        });
     }, [product]);
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -97,8 +98,8 @@ const EditProduct = ({ isVisible, onClose, product }) => {
                 for (let i = 0; i < formData.uploaded_images.length; i++) {
                     data.append('uploaded_images', formData.uploaded_images[i]);
                 }
-            } else if (key === 'categorie') {
-                data.append(key, formData[key].id);
+            } else if (formData[key]) {
+                data.append(key, formData[key].id ?? formData[key]);
             } else {
                 data.append(key, formData[key]);
             }

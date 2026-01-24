@@ -14,7 +14,7 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import config from '../../../core/store/config';
 
-const AddProduct = ({ isVisible, onClose }) => {
+const AddProduct = ({ isVisible, onClose, productId }) => {
     const [formData, setFormData] = useState({
         nom: '',
         description: '',
@@ -31,6 +31,40 @@ const AddProduct = ({ isVisible, onClose }) => {
     const [uploadCompleted, setUploadCompleted] = useState(false);
     const [step, setStep] = useState(0);
     const toast = useRef(null);
+
+useEffect(() => {
+    if (!productId) return;
+
+    const fetchProduct = async () => {
+        try {
+            const response = await axios.get(`${config.API_BASE_URL}/api/produit/${productId}/`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('access')}`
+                }
+            });
+
+            const produit = response.data;
+
+            setFormData({
+                nom: produit.nom || '',
+                description: produit.description || '',
+                qte_stock: produit.qte_stock || 0,
+                prix: produit.prix || null,
+                localisation: produit.localisation || '',
+                etat: produit.etat || null,
+                categorie: produit.categorie || null,
+                uploaded_images: [], // tu peux charger les images existantes si nécessaire
+            });
+
+        } catch (error) {
+            showError('Erreur lors du chargement du produit');
+            console.error(error);
+        }
+    };
+
+    fetchProduct();
+}, [productId]);
+
 
     useEffect(() => {
         const fetchEtats = async () => {
@@ -89,30 +123,46 @@ const AddProduct = ({ isVisible, onClose }) => {
                     data.append('uploaded_images', formData.uploaded_images[i]);
                 }
             } else if (key === 'categorie') {
-                data.append(key, formData[key]?.id);
+                data.append(key, formData[key]?.id || formData[key]);
             } else {
                 data.append(key, formData[key]);
             }
         });
 
         try {
-            await axios.post(`${config.API_BASE_URL}/api/produit/create/`, data, {
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('access')}`,
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
-            showSuccess('Produit ajouté avec succès !');
+            if (productId) {
+                // Edition
+                await axios.put(`${config.API_BASE_URL}/api/produit/${productId}/`, data, {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('access')}`,
+                        'Content-Type': 'multipart/form-data'
+                    }
+                });
+                showSuccess('Produit modifié avec succès !');
+            } else {
+                // Création
+                await axios.post(`${config.API_BASE_URL}/api/produit/create/`, data, {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('access')}`,
+                        'Content-Type': 'multipart/form-data'
+                    }
+                });
+                showSuccess('Produit ajouté avec succès !');
+            }
+
             setFormData({ nom: '', description: '', prix: null, qte_stock: 0, localisation: '', etat: null, uploaded_images: [], categorie: null });
             setUploadCompleted(false);
             onClose();
+
         } catch (error) {
-            showError('Erreur lors de l\'ajout du produit');
+            showError(productId ? 'Erreur lors de la modification du produit' : 'Erreur lors de l\'ajout du produit');
+            console.error(error.response?.data || error.message);
         } finally {
             setLoading(false);
         }
     };
 
+    // Définir les fonctions avant tout usage
     const showSuccess = (message) => {
         toast.current?.show({ severity: 'success', summary: 'Succès', detail: message, life: 3000 });
     };
@@ -120,6 +170,7 @@ const AddProduct = ({ isVisible, onClose }) => {
     const showError = (message) => {
         toast.current?.show({ severity: 'error', summary: 'Erreur', detail: message, life: 3000 });
     };
+
 
     // Fonction pour vérifier si le formulaire est valide
     const isFormValid = () => {

@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Modal, message, Input, Badge, Tooltip } from 'antd';
-import { ExclamationCircleOutlined, EditOutlined, DeleteOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { ExclamationCircleOutlined, DeleteOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import '../../../app_main/style/seller/Annonces.css';
-import EditProduct from './Edit';
 import config from '../../../core/store/config';
 
 const { confirm } = Modal;
@@ -11,8 +10,6 @@ const Annonces = () => {
     // États
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [isEditProductVisible, setIsEditProductVisible] = useState(false);
-    const [selectedProduct, setSelectedProduct] = useState(null);
     const [error, setError] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
@@ -80,11 +77,6 @@ const Annonces = () => {
         }).format(price);
     };
 
-    const handleModify = (product) => {
-        setSelectedProduct(product);
-        setIsEditProductVisible(true);
-    };
-
     const handleDelete = useCallback((key) => {
         confirm({
             title: 'Êtes-vous sûr de vouloir supprimer ce produit ?',
@@ -117,12 +109,6 @@ const Annonces = () => {
             }
         });
     }, []);
-
-    const handleCloseEditProduct = useCallback(() => {
-        setIsEditProductVisible(false);
-        setSelectedProduct(null);
-        fetchProducts();
-    }, [fetchProducts]);
 
     const filteredData = data.filter((item) =>
         item.produits.toLowerCase().includes(searchTerm.toLowerCase())
@@ -217,12 +203,6 @@ const Annonces = () => {
                                     </td>
                                     <td data-label="Date">{item.date_creation}</td>
                                     <td data-label="Actions" className="an-actions">
-                                        <Tooltip title="Modifier">
-                                            <EditOutlined
-                                                className="an-edit-icon"
-                                                onClick={() => handleModify(item)}
-                                            />
-                                        </Tooltip>
                                         <Tooltip title="Supprimer">
                                             <DeleteOutlined
                                                 className="an-delete-icon"
@@ -261,14 +241,6 @@ const Annonces = () => {
                     <h3>Aucune annonce trouvée</h3>
                     <p>Il n'y a actuellement aucune annonce disponible.</p>
                 </div>
-            )}
-
-            {isEditProductVisible && (
-                <EditProduct
-                    visible={isEditProductVisible}
-                    onClose={handleCloseEditProduct}
-                    product={selectedProduct}
-                />
             )}
         </div>
     );
