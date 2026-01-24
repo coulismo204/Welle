@@ -41,7 +41,7 @@ class ProduitListOwner(generics.ListAPIView):
 class ProduitDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Produit.objects.all()
     serializer_class = ProduitDetailSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     def delete(self, request, *args, **kwargs):
         produit = self.get_object()
